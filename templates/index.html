@@ -1,0 +1,337 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File and Execute Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .upload-box {
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+    {% if message %}
+    <script>
+        alert("{{ message }}");
+    </script>
+    {% endif %}
+</head>
+<body>
+    <h1>Upload File and Execute Function</h1>
+    <div class="upload-box">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+    <form action="/execute" method="POST">
+        <input type="submit" value="Download File After Uploading File">
+    </form>
+    {% if message %}
+    <div class="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File and Execute Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .upload-box {
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #0077b6;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background-color: #caf0f8;
+            color: #0077b6;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+    {% if message %}
+    <script>
+        alert("{{ message }}");
+    </script>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <h1>Upload File and Execute Function</h1>
+    </header>
+    <div class="upload-box">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="file">Choose a file:</label>
+            <input type="file" name="file" id="file">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+    <form action="/execute" method="POST">
+        <input type="submit" value="Download File ">
+    </form>
+    {% if message %}
+    <div class="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File and Execute Function</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .upload-box {
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #0077b6;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background-color: #caf0f8;
+            color: #0077b6;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+    {% if message %}
+    <script>
+        alert("{{ message }}");
+    </script>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <h1>Upload File and Execute Function</h1>
+    </header>
+    <div class="upload-box">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="file">Choose a Input file:</label>
+            <input type="file" name="file" id="file"><br><br>
+
+            <label for="mapping_file">Choose a mapping file:</label>
+            <input type="file" name="mapping_file" id="mapping_file"><br><br>
+        
+            <label>Start Year:</label>
+            <input type="number" name="start_year" value="2023">
+            <label>End Year:</label>
+            <input type="number" name="end_year" value="2026"><br><br>
+            <label>ColorNTPR:</label>
+            <input type="color" name="colorNTPR" value="#cb997e"><br><br>
+            <label>ColorMAT05:</label>
+            <input type="color" name="colorMAT05" value="#ffca3a"><br><br>
+            <label>ColorMAT10:</label>
+            <input type="color" name="colorMAT10" value="#8ac926"><br><br>
+            <label>ColorMAT20:</label>
+            <input type="color" name="colorMAT20" value="#5fa8d3"><br><br>
+            <label>ColorMAT30:</label>
+            <input type="color" name="colorMAT30" value="#c499d4"><br><br> 
+
+            <label><b>Portfolio_Type:</b></label>
+            <div class="dropdown-menu1"  aria-labelledby="dropdownMenuLink1" id="dropdown-menu1">
+                <label><input type="checkbox" name="portfolio_type[]" value="CMOS" checked> CMOS</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="eNVM" checked> eNVM</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="Imager" checked>Imager</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="Analog" checked>Analog</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="AI" checked>AI</label><br>
+                <label><input type="checkbox" name="portfolio_type[]" value="Advanced R&D">Advanced R&D</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="SMARTPOWER" >SMARTPOWER</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="Analog&MixSig">Analog&MixSig</label><br>
+                <label><input type="checkbox" name="portfolio_type[]" value="Process Transfer & Industrialization">Process Transfer & Industrialization</label>
+                <label><input type="checkbox" name="portfolio_type[]" value="NonTechno">NonTechno</label>
+            </div><br>
+
+            <!-- <input type="text" name="portfolio_type" value="CMOS, eNVM, Imager, Analog, AI"><br><br> -->
+            <label><b>Status Budget TLS:</b></label><br><br>
+
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink" id="dropdown-menu">
+                    <label><input type="checkbox" name="status_budget_tls[]" value="Active-PostMAT30" checked> Active-PostMAT30</label>
+                    <label><input type="checkbox" name="status_budget_tls[]" value="Active-Roadmap" checked> Active-Roadmap</label>
+                    <label><input type="checkbox" name="status_budget_tls[]" value="Inactive"> Inactive</label><br>
+                    <label><input type="checkbox" name="status_budget_tls[]" value="Not yet active"> Not yet active</label>
+                    <label><input type="checkbox" name="status_budget_tls[]" value="onhold"> onhold</label>
+                    <label><input type="checkbox" name="status_budget_tls[]" value="Stopped"> Stopped</label>
+                    <label><input type="checkbox" name="status_budget_tls[]" value="TBD"> TBD</label>
+                </div>
+            
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <form action="/execute" method="POST">
+        <input type="submit" value="Download File ">
+    </form>
+
+
+    <form action="/del" method="POST">
+        <input type="submit" value="Clear Outputfile">
+    </form>
+    {% if message %}
+    <div class="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            $('.multiselect').multiselect({
+                includeSelectAllOption: true,
+                selectAllText: 'Select All'
+            });
+        });
+    </script> -->
+    <!-- <script>
+        $(document).ready(function() {
+            $('.multiselect').multiselect({
+                includeSelectAllOption: true,
+                enableFiltering: true,
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: 200
+            });
+        });
+        </script> -->
+
+
+</body>
+</html>
